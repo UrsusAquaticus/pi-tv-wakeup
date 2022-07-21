@@ -1,0 +1,48 @@
+sudo rm /etc/xdg/autostart/piwiz.desktop
+
+sudo apt purge wolfram-engine scratch scratch2 nuscratch sonic-pi idle3 -y
+sudo apt purge smartsim java-common minecraft-pi libreoffice* -y
+
+sudo apt-get install chromium-browser
+
+sudo apt clean
+sudo apt autoremove -y
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo nano /boot/config.txt
+  hdmi_force_hotplug=1
+  hdmi_edid_file=1
+  hdmi_group=1
+  hdmi_mode=2
+  hdmi_drive=2
+
+
+  
+
+sudo apt install unclutter sed -y
+
+export DISPLAY=:0.0
+
+sudo nano /lib/systemd/system/kiosk.service
+  [Unit]
+  Description=Chromium Kiosk
+  Wants=graphical.target
+  After=graphical.target
+
+  [Service]
+  Environment=DISPLAY=:0.0
+  Environment=XAUTHORITY=/home/pi/.Xauthority
+  Type=simple
+  ExecStart=/bin/bash /home/pi/kiosk.sh
+  Restart=on-abort
+  User=pi
+  Group=pi
+
+  [Install]
+  WantedBy=graphical.target
+  
+sudo systemctl enable kiosk.service
+
+sudo systemctl start kiosk.service

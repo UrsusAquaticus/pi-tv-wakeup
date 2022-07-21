@@ -1,8 +1,0 @@
-https://github.com/guysoft/FullPageOS
-https://elinux.org/R-Pi_Troubleshooting#Sound
-
-sudo nano /boot/fullpageos.txt
-
-sudo apt-get install alsa-utils
-sudo modprobe snd_bcm2835
-sudo aplay /usr/share/sounds/alsa/Front_Center.wav

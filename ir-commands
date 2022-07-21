@@ -1,4 +1,4 @@
-sudo apt-get install lirc
+sudo apt-get install lirc -y
 
 sudo nano /etc/modules
   lirc_dev
@@ -17,7 +17,7 @@ sudo nano /boot/config.txt
   dtoverlay=gpio-ir-tx,gpio_pin=22
 
 http://lirc.sourceforge.net/remotes/
-wget 'http://lirc.sourceforge.net/remotes/samsung/BN59-00869A' -O - >> /etc/lirc/lircd.conf
+sudo wget 'http://lirc.sourceforge.net/remotes/samsung/BN59-00869A' -O - >> sudo /etc/lirc/lircd.conf
 
 sudo nano /etc/lirc/lirc_options.conf
   driver          = default

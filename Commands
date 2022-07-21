@@ -1,0 +1,22 @@
+sudo apt-get install lirc
+
+sudo nano /etc/modules
+  lirc_dev
+  lirc_rpi gpio_out_pin=22
+
+sudo nano /etc/lirc/hardware.conf
+  LIRCD_ARGS="--uinput"
+  LOAD_MODULES=true
+  DRIVER="default"
+  DEVICE="/dev/lirc0"
+  MODULES="lirc_rpi"
+  LIRCD_CONF=""
+  LIRCMD_CONF=""
+  
+http://lirc.sourceforge.net/remotes/
+
+wget 'http://lirc.sourceforge.net/remotes/samsung/BN59-00869A' -O - >> /etc/lirc/lircd.conf
+
+sudo reboot
+
+irsend SEND_ONCE Samsung_BN59-00869A BTN_POWER

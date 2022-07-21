@@ -17,6 +17,9 @@ http://lirc.sourceforge.net/remotes/
 
 wget 'http://lirc.sourceforge.net/remotes/samsung/BN59-00869A' -O - >> /etc/lirc/lircd.conf
 
+sudo nano /etc/lirc/lirc_options.conf
+  driver          = default
+
 sudo reboot
 
 irsend SEND_ONCE Samsung_BN59-00869A BTN_POWER

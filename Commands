@@ -12,9 +12,11 @@ sudo nano /etc/lirc/hardware.conf
   MODULES="lirc_rpi"
   LIRCD_CONF=""
   LIRCMD_CONF=""
-  
-http://lirc.sourceforge.net/remotes/
 
+sudo nano /boot/config.txt
+  dtoverlay=gpio-ir-tx,gpio_pin=22
+
+http://lirc.sourceforge.net/remotes/
 wget 'http://lirc.sourceforge.net/remotes/samsung/BN59-00869A' -O - >> /etc/lirc/lircd.conf
 
 sudo nano /etc/lirc/lirc_options.conf

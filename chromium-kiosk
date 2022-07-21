@@ -1,4 +1,5 @@
 sudo rm /etc/xdg/autostart/piwiz.desktop
+sudo apt remove lxplug-ptbatt -y
 
 sudo apt purge wolfram-engine scratch scratch2 nuscratch sonic-pi idle3 -y
 sudo apt purge smartsim java-common minecraft-pi libreoffice* -y

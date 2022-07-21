@@ -1,4 +1,5 @@
 #!/bin/bash
+export DISPLAY=:0
 xset s noblank
 xset s off
 xset -dpms
@@ -9,3 +10,7 @@ sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium
 
 /usr/bin/chromium-browser --autoplay-policy=no-user-gesture-required --noerrdialogs --disable-infobars --kiosk https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1 &
 
+while true; do
+      xdotool keydown ctrl+Tab; xdotool keyup ctrl+Tab;
+      sleep 15
+done

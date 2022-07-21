@@ -32,7 +32,7 @@ sudo nano /lib/systemd/system/kiosk.service
   After=graphical.target
 
   [Service]
-  Environment=DISPLAY=:0.0
+  Environment=DISPLAY=:0
   Environment=XAUTHORITY=/home/pi/.Xauthority
   Type=simple
   ExecStart=/bin/bash /home/pi/kiosk.sh
